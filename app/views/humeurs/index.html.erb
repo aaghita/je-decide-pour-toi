@@ -1,0 +1,19 @@
+
+<div class = "container container-fluid" data-controller="decide"
+                                         <%@humeurs.each do |humeur|%>
+                                         data-decide-<%humeur%>-value = <%"#{humeur}"%>
+                                         <% end %>>
+
+  <div class="row m-5">
+    <% @humeurs.each do |humeur| %>
+      <h1 class="col p-2" data-target=<%"#{humeur}"%>><%= link_to humeur.name, humeur_path(humeur)%></h1>
+    <% end %>
+  </div>
+
+  <div class = "fixed-bottom row bg-warning text-white">
+    <div class="col ms-5"><h1><strong>Je suis d'humeur</strong></h1></div>
+    <div class="col" data-target="empty"><h1></h1></div>
+    <div class= "col btn btn-secondary me-5" data-action="click=>decide#action"><h1>submit</h1></div>
+  </div>
+
+</div>

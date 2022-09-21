@@ -10,3 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+a{
+  text-decoration: none;
+  color: black
+}
+
+a:hover {
+  color: white;
+  background-color: rgb(153, 7, 131);
+  -webkit-animation: random 5s infinite;
+  animation: random 5s infinite;
+  margin: 3px;
+}
