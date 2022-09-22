@@ -8,7 +8,7 @@ puts 'Database clean'
 # <=== SEEDING ===>
 
 
-humeur = Humeur.new({name: 'lassive'})
+humeur = Humeur.new({name: 'lasse'})
 humeur.save
 #
 data_a = {content: '⚇ regarder l’épisode 101 de Killing Eve ⚇', link:'https://www.canalplus.com/series/killing-eve/h/10221384_50001'}
@@ -25,7 +25,7 @@ action_b.photos.attach(io: photo, filename: humeur.name, content_type: 'jpg')
 action_b.humeur = humeur
 action_b.save
 
-puts '*** lassive done ***'
+puts '*** lasse done ***'
 
 humeur = Humeur.new({name: 'joyeuse'})
 humeur.save
