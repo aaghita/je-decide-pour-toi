@@ -1,13 +1,13 @@
 
-<div class = "container container-fluid" data-controller="decide"
-                                         <%@humeurs.each do |humeur|%>
-                                         data-decide-<%humeur%>-value = <%"#{humeur}"%>
-                                         <% end %>>
+<div class = "container container-fluid">
 
-  <div class="row m-5">
+  <div class="m-5">
     <h1 class="pb-2"><strong>Je suis d'humeur :</strong></h1>
-    <% @humeurs.each do |humeur| %>
-      <h1 class="col p-2" data-target=<%"#{humeur}"%>><%= link_to humeur.name + ",", humeur_path(humeur)%></h1>
-    <% end %>
+    <div class="row mt-5">
+      <% @humeurs.each do |humeur| %>
+        <div class="row col p-2"><h1><%= link_to humeur.name + ",", humeur_path(humeur)%></h1></div>
+      <% end %>
+    </div>
+    <h1><%= link_to "...", new_humeur_path%></h1>
   </div>
 </div>

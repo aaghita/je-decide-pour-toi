@@ -18,8 +18,20 @@ a{
 
 a:hover {
   color: white;
-  background-color: rgb(153, 7, 131);
-  -webkit-animation: random 5s infinite;
-  animation: random 5s infinite;
+  background-color: cornflowerblue;
+  animation: 1.2s bgrandom infinite;  -webkit-animation: random 5s infinite;
   margin: 3px;
 }
+
+@keyframes bgrandom {
+  0% { background-color: orange; }
+  50% { background-color: red; }
+
+  55% { background-color: blue; }
+  80% { background-color: yellow; }
+
+  85% { background-color: pink; }
+  100% { background-color: green; }
+  }
+
+  #element{   }

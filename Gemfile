@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 #Cloudinary
-# gem "cloudinary"
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'
 
 #Geocoder
 gem "geocoder"

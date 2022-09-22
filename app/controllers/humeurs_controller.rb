@@ -8,14 +8,16 @@ class HumeursController < ApplicationController
   def show
   end
 
-  # def new
-  #   @humeur = Humeur.new
-  # end
+  def new
+    @humeur = Humeur.new
+  end
 
-  # def create
-  #   @humeur = Humeur.new(humeur_params)
-  #   @humeur.save
-  # end
+  def create
+    @humeur = Humeur.new(humeur_params)
+    @humeur.save
+
+    redirect_to humeur_path(@humeur)
+  end
 
   # def edit
   #   @humeur.update(params[:humeur])
@@ -35,8 +37,8 @@ class HumeursController < ApplicationController
     @humeur = Humeur.find(params[:id])
   end
 
-  # def humeur_params
-  #   params.require(:humeur).permit(:name)
-  # end
+  def humeur_params
+    params.require(:humeur).permit(:name)
+  end
 
 end
