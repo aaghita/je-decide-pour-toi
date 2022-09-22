@@ -8,7 +8,7 @@
     <% elsif action.address %>
       <h4 class=""><%= action.address %></h4>
     <% elsif action.photos.attached? %>
-      <div><h1 class="mt-3"><%= link_to cl_image_tag(action.photos[0].key, class: "action-photo"), action.link %></h1></div>
+      <div><h1 class="mt-3"><%= link_to cl_image_tag(action.photos.first.key, class: "action-photo"), action.link %></h1></div>
     <% end %>
     <div class="fixed-bottom">
       <h3 class="mb-5 me-5 d-flex align-items-end flex-column"><%= link_to "... j'ai changé d'humeur.", humeurs_path %></h3>
