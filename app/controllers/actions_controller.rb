@@ -14,6 +14,7 @@ class ActionsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude
       }
+    end
   end
 
   # def new
