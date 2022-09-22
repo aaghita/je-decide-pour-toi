@@ -50,7 +50,7 @@ action_a = Action.new(data_a)
 action_a.humeur = humeur
 action_a.save
 #
-data_b = {content: '♪ me maquiller et/ou me déguiser ♪ mettre la musique à fond ♪ danser ♪', link: "https://www.youtube.com/watch?v=_hrJT6SUYX0"}
+data_b = {content: '♪ me maquiller et/ou me déguiser ♪ mettre la musique à fond ♪ danser ♪', video: "https://www.youtube.com/embed/_hrJT6SUYX0"}
 action_b = Action.new(data_b)
 action_b.humeur = humeur
 action_b.save
@@ -91,7 +91,8 @@ puts '*** poétique done ***'
 humeur = Humeur.new({name: 'musicienne'})
 humeur.save
 #
-action_a = Action.new({content: '♪ aller écouter de la musique à la petite halle de la villette ♪'})
+data_b = {content:'♪ aller écouter de la musique à la petite halle de la villette ♪', address:'Attenant à la Grande Halle de la Villette, 211 Av. Jean Jaurès, 75019 Paris'}
+action_a = Action.new(data_b)
 action_a.humeur = humeur
 action_a.save
 #
@@ -168,7 +169,8 @@ puts '*** câline done ***'
 humeur = Humeur.new({name: 'énervée'})
 humeur.save
 #
-action_a = Action.new({content: "☠ aller me coucher ☠ bouder seul dans mon lit ☠"})
+data_a = {content: "☠ aller me coucher ☠ bouder seul tout dans mon lit ☠", video:'https://www.youtube.com/embed/qR92VDbQUeo'}
+action_a = Action.new(data_a)
 action_a.humeur = humeur
 action_a.save
 #

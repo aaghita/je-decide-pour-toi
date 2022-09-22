@@ -9,6 +9,11 @@ class ActionsController < ApplicationController
   def index
     @actions = Action.all
     @action = Action.order("RAND()").first(1)
+    @markers = @actions.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
   end
 
   # def new
