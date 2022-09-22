@@ -1,4 +1,7 @@
-<div class = "container">
-  <div><h1 class="row">Je peux :</h1></div>
-  <div><h2 class="row"><%= actions = @humeur.actions.map { |action| action.content }.sample %></h2></div>
+<div class = "container container-fluid">
+
+  <div class="row m-5">
+    <h1 class="pb-2"><strong>Je peux :</strong></h1>
+    <h1 class="col"><%= @humeur.actions.map { |action| action.content }.sample %></h1>
+  </div>
 </div>

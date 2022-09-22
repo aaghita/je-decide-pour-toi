@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # root to: "pages#home"
+  root to: "pages#home"
   resources :humeurs do
     resources :actions, only: [:index]
   end
