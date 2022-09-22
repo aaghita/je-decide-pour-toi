@@ -1,6 +1,6 @@
 <div class = "container container-fluid">
   <div class="row m-5">
-    <h1 class="pb-2"><strong>Je peux :</strong></h1>
+    <h1 class="pb-2"><strong>Je peux...</strong></h1>
     <h1 class="col mt-5"><%= @humeur.actions.map { |action| action.content }.sample %></h1>
     <div class="fixed-bottom">
       <h3 class="mb-5 me-5 d-flex align-items-end flex-column"><%= link_to "j'ai changé d'humeur", humeurs_path %></h3>

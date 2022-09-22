@@ -37,6 +37,6 @@ class ActionsController < ApplicationController
   end
 
   def action_params
-    params.require(:action).permit(:content)
+    params.require(:action).permit(:content, :photo)
   end
 end
