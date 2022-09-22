@@ -18,7 +18,8 @@ a{
 
 a:hover {
   color: white;
-  background-color: cornflowerblue;
+  text-decoration: underline;
+  background-color: $warning;
   animation: 1.2s bgrandom infinite;  -webkit-animation: random 5s infinite;
   margin: 3px;
 }

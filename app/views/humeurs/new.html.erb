@@ -1,8 +1,10 @@
 <div class="d-flex position-absolute top-50 start-50 translate-middle">
   <h1 class="justify-content-center">
     <%= simple_form_for(@humeur) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit %>
+      <%= f.input :name, label: false %>
+      <div class="d-grid gap-2">
+        <%= f.submit 'Nouvelle humeur ?', class: "text-light btn btn-warning"%>
+      </div>
     <% end %>
   </h1>
 </div>
