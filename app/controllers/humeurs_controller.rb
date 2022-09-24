@@ -6,6 +6,7 @@ class HumeursController < ApplicationController
   end
 
   def show
+    @mission = @humeur.missions.map { |mission| mission }.sample
   end
 
   def new
@@ -14,9 +15,11 @@ class HumeursController < ApplicationController
 
   def create
     @humeur = Humeur.new(humeur_params)
-    @humeur.save
-
-    redirect_to humeur_path(@humeur)
+    if @humeur.save
+      redirect_to humeur_path(@humeur)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # def edit
@@ -31,7 +34,7 @@ class HumeursController < ApplicationController
   #   @humeur.destroy
   # end
 
-  # private
+  private
 
   def set_humeur
     @humeur = Humeur.find(params[:id])

@@ -1,3 +1,5 @@
 class Humeur < ApplicationRecord
-  has_many :actions, dependent: :destroy
+  has_many :missions, dependent: :destroy
+
+  validates :name, presence: true, uniqueness: true
 end

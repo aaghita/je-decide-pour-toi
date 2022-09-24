@@ -1,10 +1,14 @@
 <div class="d-flex position-absolute top-50 start-50 translate-middle">
-  <h1 class="justify-content-center">
+  <h6 class="justify-content-center">
     <%= simple_form_for(@humeur) do |f| %>
       <%= f.input :name, label: false %>
       <div class="d-grid gap-2">
-        <%= f.submit 'Nouvelle humeur ?', class: "text-light btn btn-warning"%>
+        <%= f.submit 'Nouvelle humeur ?', class: "text-light btn btn-warning h3"%>
       </div>
     <% end %>
-  </h1>
+  </h6>
+</div>
+
+<div class="fixed-bottom">
+  <h3 class="mb-5 me-5 d-flex align-items-end flex-column"><%= link_to ":) en fait non.", humeurs_path %></h3>
 </div>
