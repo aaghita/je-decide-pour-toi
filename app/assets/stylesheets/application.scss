@@ -19,20 +19,8 @@ a{
 a:hover {
   color: white;
   text-decoration: underline;
-  background-color: $warning;
+  // background-color: $warning;
   animation: 1.2s bgrandom infinite;  -webkit-animation: random 5s infinite;
   margin: 3px;
 }
 
-@keyframes bgrandom {
-  0% { background-color: orange; }
-  50% { background-color: red; }
-
-  55% { background-color: blue; }
-  80% { background-color: yellow; }
-
-  85% { background-color: pink; }
-  100% { background-color: green; }
-  }
-
-  #element{   }

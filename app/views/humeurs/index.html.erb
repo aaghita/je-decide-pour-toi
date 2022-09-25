@@ -1,13 +1,13 @@
 
 <div class = "container container-fluid">
 
-  <div class="m-5">
+  <div class="m-5" data-controller="hello">
     <h1 class="pb-2"><strong>Je suis d'humeur...</strong></h1>
     <div class="row mt-5">
       <% @humeurs.each do |humeur| %>
-        <div class="row col p-2"><h1><%= link_to humeur.name + ",", humeur_path(humeur)%></h1></div>
+        <div class="row col p-2"><h1 id="word"><%= link_to humeur.name + ",", humeur_path(humeur)%></h1></div>
       <% end %>
     </div>
-    <h1><strong><%= link_to "...", new_humeur_path%></strong></h1>
+    <h1 id="word"><strong><%= link_to "...", new_humeur_path%></strong></h1>
   </div>
 </div>
