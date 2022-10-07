@@ -11,6 +11,7 @@ class HumeursController < ApplicationController
 
   def new
     @humeur = Humeur.new
+
   end
 
   def create

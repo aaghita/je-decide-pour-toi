@@ -1,0 +1,12 @@
+<div class="d-flex position-absolute top-50 start-50 translate-middle">
+  <h6 class="justify-content-center">
+    <%= simple_form_for mission do |f| %>
+      <%= f.input :done, data: {
+                         id: mission.id,
+                         action: "hello#toggle"
+                       } %>
+      <div class="d-grid gap-2">
+      </div>
+    <% end %>
+  </h6>
+</div>

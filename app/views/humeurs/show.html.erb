@@ -9,6 +9,23 @@
         <div>
           <h1 class="mt-5"><%= @mission.content %></h1>
         </div>
+
+      <% if !@mission.done %>
+        <div>
+          <div data-controller = "hello"
+            class="mt-5 row d-flex h6">
+            <%= form_with(model: @mission, class:"h6") do |form| %>
+              <%= form.check_box :done,
+                                data: {
+                                  id: @mission.id,
+                                  action: "hello#toggle"
+                                }%>
+                                C'est fait bébé !
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
       <% if @mission.link && !@mission.photos.attached? %>
 
         <div>
@@ -51,18 +68,8 @@
 
     <% end %>
 
-    <% if !@mission.done %>
-      <div>
-        <br>
-        <br>
-        <% render template: "missions/edit"%>
-        <%# <input type="checkbox" id="scales" name="done">
-        <label for="done"><h6>C'est fait bébé !</h6></label> %>
-      </div>
-    <% end %>
-
-    <div class="fixed-bottom">
-      <h3 class="mb-5 me-5 d-flex align-items-end flex-column"><%= link_to ":) j'ai changé d'humeur.", humeurs_path %></h3>
+    <div class="fixed-bottom" data-controller="hello">
+      <h3 id="word" class="mb-5 me-5 d-flex align-items-end flex-column"><%= link_to ":) j'ai changé d'humeur.", humeurs_path %></h3>
     </div>
 
   </div>

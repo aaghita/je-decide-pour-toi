@@ -1,3 +1,12 @@
+require 'json'
+require 'open-uri'
+
+url = "https://opendata.hauts-de-seine.fr/api/records/1.0/search/?dataset=gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne&q=&rows=10000"
+user_serialized = URI.open(url).read
+metro = JSON.parse(user_serialized)
+
+puts "#{metro['records'].sample['fields']['nom']}"
+
 # <=== DATABASE CLEANOUT ===>
 
 puts 'Cleaning database...'
@@ -84,7 +93,7 @@ mission = Mission.new({ content: "✈ sortir de chez moi ✈ faire gauche ✈ dr
 mission.humeur = humeur
 mission.save
 #
-mission = Mission.new({ content: '✈ prendre le métro à côté de chez moi ✈ aller au terminus ✈ revenir à pieds ✈' })
+mission = Mission.new({ content: "✈ prendre le métro jusqu'à pouet ✈ aller au terminus ✈ revenir à pieds ✈" })
 mission.humeur = humeur
 mission.save
 #
@@ -288,6 +297,26 @@ mission.save
 
 puts '*** romantique done ***'
 
+humeur = Humeur.new({ name: 'touristique' })
+humeur.save
+#
+data = { content: '♡ aller manger des marrons chauds sous la tour Eiffel ♡', address: 'Champs de Mars, 5 avenue Anatole France, 75007 Paris' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+
+puts '*** touristique done ***'
+
+humeur = Humeur.new({ name: 'canaille' })
+humeur.save
+#
+data = { content: "♡ boire un verre à l'escargot ♡", address: 'Champs de Mars, 5 avenue Anatole France, 75007 Paris' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+
+puts '*** canaille done ***'
+
 humeur = Humeur.new({ name: 'bretonne' })
 humeur.save
 #
@@ -302,6 +331,71 @@ mission.humeur = humeur
 mission.save
 
 puts '*** bretonne done ***'
+
+humeur = Humeur.new({ name: 'joueuse' })
+humeur.save
+#
+data = { content: '● aller à Mesia ●', address: '84 rue René Boulanger' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+#
+data = { content: '● aller au Nid, cocon ludique ●', address: '227 rue Saint-Martin' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+#
+data = { content: '● faire des mots croisés ●' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+
+puts '*** joueuse done ***'
+
+humeur = Humeur.new({ name: 'théâtrale' })
+humeur.save
+#
+data = { content: '● regarder la programmation du théâtre du Châtelet ● prendre un billet pour ce soir ●', address: '2 rue Edouard Colonne', link: 'https://www.chatelet.com' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+#
+data = { content: '● regarder la programmation du théâtre Chaillot ● prendre un billet pour ce soir ●', address: '1 place du Trocadéro et du 11 Novembre', link: 'https://theatre-chaillot.fr' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+#
+data = { content: '● trouver un théâtre rue oberkampf ● prendre un billet pour ce soir' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+
+puts '*** théâtrale done ***'
+
+humeur = Humeur.new({ name: 'loufoque' })
+humeur.save
+#
+data = { content: '● on est vendredi soir ? ● prendre une palce pour le Rocky Horror Picture Show ●', address: 'Cinéma Studio Galande, 42 rue Galande', link: 'http://studiogalande.fr/FR/113/rocky-horror-îcture-show.html' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+
+puts '*** loufoque done ***'
+
+humeur = Humeur.new({ name: 'sportive' })
+humeur.save
+#
+data = { content: '● me mettre en tenue ● aller courir sur les quais ●' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+#
+data = { content: "● c'est l'hiver ? ● aller patiner au dernier étage de la tour Montparnasse", address: '33 avenue du Maine' }
+mission = Mission.new(data)
+mission.humeur = humeur
+mission.save
+
+puts '*** sportive done ***'
 
 User.create(email: 'aa.ghita@gmail.com', password: 'azerty', admin: true)
 User.create(email: 'paulportier', password: 'azerty', admin: true)

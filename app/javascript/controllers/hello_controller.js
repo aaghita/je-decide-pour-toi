@@ -30,4 +30,28 @@ export default class extends Controller {
     )
   }
 
+  toggle(e) {
+    console.log('hello from toggle')
+    const id = e.target.dataset.id
+    const csrfToken = document.querySelector("[name='csrf-token']").content
+
+    console.log(e)
+    console.log(id)
+    console.log(csrfToken)
+
+    fetch(`/missions/${id}`, {
+        method: 'PATCH',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrfToken
+        },
+        body: JSON.stringify({ completed: e.target.checked })
+    })
+      .then(response => response.json())
+      .then(data => { alert(data.message) })
+  }
+
 }

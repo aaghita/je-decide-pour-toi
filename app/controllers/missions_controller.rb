@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
-  before_action :set_humeur, only: %i[new create]
-  bedore_action :set_mission, only: %i[edit update]
+  before_action :set_humeur, only: %i[new create edit update]
+  before_action :set_mission, only: %i[edit update]
 
   def index
     @missions = Mission.all
@@ -35,16 +35,17 @@ class MissionsController < ApplicationController
   end
 
   def update
-    @mission.update(params[:mission])
-  end
+    p 'coucou'
+    @mission.update(done: params[:done])
 
-  # def destroy
-  # end
+    render json: { message: 'Success' }
+    redirect_to humeur_path(@humeur)
+  end
 
   private
 
   def set_mission
-    @mission = Mission.find(params[:mission])
+    @mission = Mission.find(params[:id])
   end
 
   def set_humeur
