@@ -16,7 +16,6 @@ puts 'Database clean'
 
 # <=== SEEDING ===>
 
-
 humeur = Humeur.new({ name: 'casanière' })
 humeur.save
 #
@@ -399,3 +398,12 @@ puts '*** sportive done ***'
 
 User.create(email: 'aa.ghita@gmail.com', password: 'azerty', admin: true)
 User.create(email: 'paulportier', password: 'azerty', admin: true)
+
+# svg
+
+humeurs = Humeur.all
+humeurs.each do |h|
+  h.icon = File.read("/Users/aaghita/code/aaghita/je-decide-pour-toi/app/assets/images/humeurs/#{h.name}.svg").html_safe
+  h.save!
+  puts "#{h.name} saved"
+end
