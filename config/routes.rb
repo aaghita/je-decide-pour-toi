@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
-  root to: 'pages#home'
+  root to: 'humeurs#index'
+  get 'dashboard', to: 'users#dashboard'
   patch 'missions/:id', to: 'missions#update'
   resources :humeurs do
     resources :missions

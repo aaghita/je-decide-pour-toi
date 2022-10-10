@@ -11,24 +11,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%#= link_to "Home", root_path, class: "nav-link" %>
-          </li>
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              mon profil
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item" type="button">
+              <%= link_to "Dashboard", dashboard_path %></button></li>
+              <li><button class="dropdown-item" type="button">Messages</button></li>
+              <li><button class="dropdown-item" type="button"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></button></li>
+            </ul>
+          </div>
+        <% else %>
           <li class="nav-item">
-            <%#= link_to "Messages", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= link_to "mon profil", class: "avatar dropdown-toggle pe-3", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class= "dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li-->
         <% end %>
       </ul>
     </div>

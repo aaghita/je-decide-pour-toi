@@ -1,34 +1,30 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  static values = {
+    color: String
+  }
 
   connect() {
-    console.log('Hello from controller')
-
-    function randomColor() {
-      let color = [];
-      for (let i = 0; i < 3; i++) {
-        color.push(Math.floor(Math.random() * 256));
-      }
-      return 'rgb(' + color.join(', ') + ')';
-    }
-
-    const links = document.querySelectorAll("#word");
-
-    console.log(links)
-
-    links.forEach(element => element.addEventListener("mouseover", (event) => {
-      console.log(element)
-      element.style.backgroundColor = randomColor();
-    })
-    )
-
-    links.forEach(element => element.addEventListener("mouseout", (event) => {
-      console.log(element)
-      element.style.backgroundColor = ''
-    })
-    )
+    console.log('Hello from body')
+    const body = document.querySelector("body");
+    body.style.backgroundColor = this.colorValue;
   }
+
+
+  // card() {
+  //   console.log('Hello from controller')
+
+  //   const links = document.querySelectorAll("body");
+
+  //   console.log(links)
+
+  //   links.forEach(element => element.addEventListener("mouseover", (event) => {
+  //     console.log(element)
+  //     document.body.style.backgroundColor = randomColor();
+  //   })
+  //   )
+  // }
 
   toggle(e) {
     console.log('hello from toggle')

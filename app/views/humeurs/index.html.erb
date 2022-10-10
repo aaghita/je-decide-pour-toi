@@ -3,12 +3,12 @@
 
   <div class="m-5" data-controller="hello">
     <h1 class="pb-2 fixetop">
-      <strong>Salut, <% current_user.name %></strong> <br>
+      <strong>Salut <% current_user.username if user_signed_in?%>,</strong> <br>
       comment te sens tu aujourd'hui ?
     </h1>
-    <div class="row mt-5 d-flex">
+    <div class="row mt-5 d-flex" id="card">
       <% @humeurs.each do |humeur| %>
-        <div class="col-3 m-3 p-2 d-flex justify-content-center bg-primary align-items-center" id="humeurcard"><h1 id="word"><%= link_to humeur.icon.html_safe, humeur_path(humeur)%></h1></div>
+        <div class="col-3 m-3 p-2 d-flex justify-content-center align-items-center" id="humeurcard" style="background-color: <%= humeur.color %>"><h1 id="word"><%= link_to humeur.icon.html_safe, humeur_path(humeur)%></h1></div>
       <% end %>
     </div>
     <h1 id="word"><strong><%#= link_to "...", new_humeur_path%></strong></h1>

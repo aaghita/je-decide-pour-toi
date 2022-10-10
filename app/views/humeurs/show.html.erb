@@ -1,27 +1,20 @@
-<div class = "">
-  <div class= "container">
-
-    <div class="row m-5">
-
-      <%= @humeur.icon.html_safe %>
-      <% if @humeur.missions.exists? %>
-        <%# mission = @humeur.missions.map { |mission| mission }.sample %>
-          <div>
-            <h1 class="mt-5"><%= @mission.content %></h1>
-          </div>
-
-      <% else %>
-
+<div class= "container">
+  <div class="fixed-top container" data-controller="hello"
+                                   data-hello-color-value="<%= @humeur.color%>">
+    <h3 id="word" class="mt-5 me-5 d-flex align-items-start flex-column"><%= link_to (File.read("#{Rails.root}/app/assets/images/back.svg").html_safe), humeurs_path %></h3>
+  </div>
+  <div class="row m-5">
+    <div><%= @humeur.icon.html_safe %></div>
+    <% if @humeur.missions.exists? %>
         <div>
-          <h4 class=""><%= link_to "Il n'y a pas encore d'mission associée à cette humeur", new_humeur_mission_path(@humeur)%>.</h4>
+          <h1 class="mt-5"><%= @mission.content %></h1>
         </div>
-
-      <% end %>
-
-      <div class="fixed-bottom" data-controller="hello">
-        <h3 id="word" class="mb-5 me-5 d-flex align-items-end flex-column"><%= link_to ":) j'ai changé d'humeur.", humeurs_path %></h3>
+    <% else %>
+      <div>
+        <h4 class=""><%= link_to "Il n'y a pas encore d'mission associée à cette humeur", new_humeur_mission_path(@humeur)%>.</h4>
       </div>
+    <% end %>
 
-    </div>
+
   </div>
 </div>
