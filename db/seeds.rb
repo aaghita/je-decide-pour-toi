@@ -407,3 +407,9 @@ humeurs.each do |h|
   h.save!
   puts "#{h.name} saved"
 end
+
+colors = ['#2C6CBF', '#59D986', '#F2C84B', '#EE884E', '#D92211']
+humeurs.each do |h|
+  h.color = colors.sample
+  h.save
+end
