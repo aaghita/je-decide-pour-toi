@@ -2,12 +2,15 @@
 <div class = "container container-fluid">
 
   <div class="m-5" data-controller="hello">
-    <h1 class="pb-2"><strong>Je suis d'humeur...</strong></h1>
-    <div class="row mt-5">
+    <h1 class="pb-2 fixetop">
+      <strong>Salut, <% current_user.name %></strong> <br>
+      comment te sens tu aujourd'hui ?
+    </h1>
+    <div class="row mt-5 d-flex">
       <% @humeurs.each do |humeur| %>
-        <div class="row col p-2"><h1 id="word"><%= link_to humeur.name + ",", humeur_path(humeur)%></h1></div>
+        <div class="col-3 m-3 p-2 d-flex justify-content-center bg-primary align-items-center" id="humeurcard"><h1 id="word"><%= link_to humeur.icon.html_safe, humeur_path(humeur)%></h1></div>
       <% end %>
     </div>
-    <h1 id="word"><strong><%= link_to "...", new_humeur_path%></strong></h1>
+    <h1 id="word"><strong><%#= link_to "...", new_humeur_path%></strong></h1>
   </div>
 </div>

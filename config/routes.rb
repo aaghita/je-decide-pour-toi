@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   patch 'missions/:id', to: 'missions#update'
-  resources :humeurs, only: [:show] do
+  resources :humeurs do
     resources :missions
   end
   resources :missions
