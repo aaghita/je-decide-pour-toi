@@ -46,7 +46,7 @@ puts '*** casanière done ***'
 humeur = Humeur.new({ name: 'joyeuse' })
 humeur.save!
 #
-data = {content: '☺ prendre un verre au Taylor ☺', address: '25 Rue Du Château D’Eau, 22 Rue Taylor, 75010 Paris' }
+data = { content: '☺ prendre un verre au Taylor ☺', address: '25 Rue Du Château D’Eau, 22 Rue Taylor, 75010 Paris' }
 mission = Mission.new(data)
 mission.humeur = humeur
 mission.save!
