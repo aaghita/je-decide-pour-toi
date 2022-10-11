@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :rendez_vous, dependent: :destroy
-  has_many :missions, through: :rendez_vou
+  has_many :missions, through: :rendez_vous
 end
