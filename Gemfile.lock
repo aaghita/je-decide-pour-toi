@@ -115,6 +115,8 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
     ffi (1.15.5)
     font-awesome-sass (6.2.0)
       sassc (~> 2.0)
@@ -345,6 +347,7 @@ DEPENDENCIES
   cloudinary
   devise
   dotenv-rails
+  factory_bot
   font-awesome-sass (~> 6.1)
   geocoder
   guard-rspec
