@@ -350,7 +350,7 @@ humeur = Humeur.new({ name: 'touristique' })
 humeur.save!
 #
 photo = File.open(Rails.root.join('public/killing_eve.jpg'))
-data = { content: '♡ aller manger des marrons chauds sous la tour Eiffel ♡', title: 'Chauds les marrons!' ,address: 'Champs de Mars, 5 avenue Anatole France, 75007 Paris' }
+data = { content: '♡ aller manger des marrons chauds sous la tour Eiffel ♡', title: 'Chauds les marrons!', address: 'Champs de Mars, 5 avenue Anatole France, 75007 Paris' }
 mission = Mission.new(data)
 mission.photos.attach(io: photo, filename: humeur.name, content_type: 'jpg')
 mission.humeur = humeur
@@ -363,7 +363,7 @@ humeur = Humeur.new({ name: 'canaille' })
 humeur.save!
 #
 photo = File.open(Rails.root.join('public/killing_eve.jpg'))
-data = { content: "♡ boire un verre à l'escargot ♡", title: "L'escargot" , address: 'Champs de Mars, 5 avenue Anatole France, 75007 Paris' }
+data = { content: "♡ boire un verre à l'escargot ♡", title: "L'escargot", address: 'Champs de Mars, 5 avenue Anatole France, 75007 Paris' }
 mission = Mission.new(data)
 mission.photos.attach(io: photo, filename: humeur.name, content_type: 'jpg')
 mission.humeur = humeur
